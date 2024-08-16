@@ -1,17 +1,11 @@
 # KopasinJS
 
-**kopasin-js** is a lightweight and customizable JavaScript library designed to add copy-paste functionality to your web projects. With `kopasin-js`, you can effortlessly enable users to copy and paste text with minimal setup and maximum flexibility.
+**kopasin-js** is a lightweight and customizable JavaScript library designed to add copy-paste functionality to your web projects. With `kopasin-js`, you can effortlessly enable users to copy and paste text with minimal setup and maximum flexibility. This library use 0% of JQuery.
 
 ![License](https://img.shields.io/npm/l/kopasin-js)
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/masgalih320/kopasin-js/total)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/kopasin-js)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/masgalih320/kopasin-js)
-
-##  Visits
-
-- [Demo Site](https://kopasin-js.galih.me)
-- [Portfolio](https://galih.me)
-- [Galih Blogs](https://masgalih.net)
 
 ## Features
 
@@ -19,6 +13,12 @@
 - **Customizable:** Tailor the library to fit your specific needs.
 - **Lightweight:** Minimal impact on your project's performance.
 - **Cross-Browser Support:** Works seamlessly across modern web browsers.
+
+##  Visits
+
+- [Demo Site](https://kopasin-js.galih.me)
+- [Portfolio](https://galih.me)
+- [Galih Blogs](https://masgalih.net)
 
 ## Installation
 
