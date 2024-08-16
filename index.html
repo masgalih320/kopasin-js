@@ -5,30 +5,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kopasin JS Documentation</title>
+  <meta name="title" content="Kopasin JS Documentation">
+  <meta name="author" content="Galih Sukristyan Saputra">
+  <meta name="description" content="">
+  <meta name="keywords"
+    content="js,javascript,typescript,ts,js library,library,framework,jquery,copy,paste,copy paste, copy library,paste library,without jquery,vanilla,galih,galihsptr320,masgalih320,masgalih320 github,github js">
 
   <style>
+    .footer,
+    .navbar {
+      color: #fff;
+      text-align: center
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
+      background-color: #f4f4f4
     }
 
     .navbar {
       background-color: #333;
-      color: #fff;
-      padding: 10px 20px;
-      text-align: center;
+      padding: 10px 20px
     }
 
     .navbar a {
       color: #fff;
       margin: 0 15px;
-      text-decoration: none;
+      text-decoration: none
     }
 
     .navbar a:hover {
-      text-decoration: underline;
+      text-decoration: underline
     }
 
     .container {
@@ -36,21 +45,19 @@
       margin: 20px auto;
       padding: 20px;
       background-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, .1)
     }
 
     .footer {
       background-color: #333;
-      color: #fff;
-      text-align: center;
       padding: 10px 0;
       position: fixed;
       bottom: 0;
-      width: 100%;
+      width: 100%
     }
 
     .footer p {
-      margin: 0;
+      margin: 0
     }
   </style>
 </head>
@@ -86,6 +93,13 @@
       <h2>4. Copy from p</h2>
       <p id="copy-this-4">P COPY</p>
       <button type="button" id="copy-button-4">Copy</button>
+
+      <h2>5. Copy and Paste together in 1 instance</h2>
+      <input type="text" value="THIS IS COPY" id="copy-this-5" readonly>
+      <button type="button" id="copy-button-5">Copy</button>
+
+      <input type="text" id="paste-here-2" readonly>
+      <button type="button" id="paste-button-2">Paste</button>
 
       <h2>Click this paste button to check if the value are copied</h2>
       <input type="text" id="paste-here" readonly>
@@ -180,6 +194,43 @@
           console.log('Failed')
         }
       },
+    });
+
+    // 5. Use Copy and Paste together
+    // you can use the copy and paste together with different trigger, event and source or target
+    new Kopasin({
+      copy: {
+        on: 'click',
+        trigger: document.getElementById('copy-button-5'),
+        source: document.getElementById('copy-this-5'),
+        success: function () {
+          let btn = document.getElementById('copy-button-5')
+
+          btn.innerText = 'Copied!'
+          setTimeout(() => {
+            btn.innerText = 'Copy'
+          }, 1000)
+        },
+        error: function () {
+          console.log('Failed')
+        }
+      },
+      paste: {
+        on: 'click',
+        trigger: document.getElementById('paste-button-2'),
+        target: document.getElementById('paste-here-2'),
+        success: function () {
+          let btn = document.getElementById('paste-button-2')
+
+          btn.innerText = 'Success!'
+          setTimeout(() => {
+            btn.innerText = 'Paste'
+          }, 1000)
+        },
+        error: function () {
+          alert('Failed')
+        }
+      }
     });
 
     // Create a paste instance
