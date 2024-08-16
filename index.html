@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kopasin JS Demo</title>
+</head>
+
+<body>
+  <input type="text" id="copy-this" value="ASELOLE" readonly>
+  <button type="button" id="copy-button">Copy</button>
+
+  <input type="text" id="paste-here" value="" readonly>
+  <button type="button" id="paste-button">Paste</button>
+
+  <script src="dist/kopasin-js.global.js"></script>
+  <script type="text/javascript">
+    new Kopasin({
+      copy: {
+        on: 'click',
+        trigger: document.getElementById('copy-button'),
+        source: document.getElementById('copy-this'),
+        success: function () {
+          console.log('Berhasil Menyalin')
+        },
+        error: function () {
+          console.log('Gagal Menyalin')
+        }
+      },
+    });
+
+    new Kopasin({
+      paste: {
+        on: 'click',
+        trigger: document.getElementById('paste-button'),
+        target: document.getElementById('paste-here'),
+        success: function () {
+          console.log('Berhasil menempel')
+        },
+        error: function () {
+          console.log('Gagal menempel')
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
