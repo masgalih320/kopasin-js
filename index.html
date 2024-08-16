@@ -4,25 +4,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kopasin JS Demo</title>
+  <title>Kopasin JS Documentation</title>
+  <meta name="title" content="Kopasin JS Documentation">
+  <meta name="author" content="Galih Sukristyan Saputra">
+  <meta name="description" content="">
+  <meta name="keywords"
+    content="js,javascript,typescript,ts,js library,library,framework,jquery,copy,paste,copy paste, copy library,paste library,without jquery,vanilla,galih,galihsptr320,masgalih320,masgalih320 github,github js">
+
+  <style>
+    .footer,
+    .navbar {
+      color: #fff;
+      text-align: center
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4
+    }
+
+    .navbar {
+      background-color: #333;
+      padding: 10px 20px
+    }
+
+    .navbar a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none
+    }
+
+    .navbar a:hover {
+      text-decoration: underline
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .1)
+    }
+
+    .footer {
+      background-color: #333;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%
+    }
+
+    .footer p {
+      margin: 0
+    }
+  </style>
 </head>
 
 <body>
-  <input type="text" id="copy-this" value="ASELOLE" readonly>
-  <button type="button" id="copy-button">Copy</button>
 
-  <input type="text" id="paste-here" value="" readonly>
-  <button type="button" id="paste-button">Paste</button>
+  <div class="navbar">
+    <a href="https://kopasin-js.galih.me">Home</a>
+    <a href="https://galih.me">Portfolio</a>
+    <a href="https://masgalih.net">Galih Blogs</a>
+  </div>
 
-  <script src="dist/kopasin-js.global.js"></script>
+  <div class="container">
+    <h1>Kopasin JS Documentation</h1>
+    <p>
+      Welcome to the documentation page for Kopasin JS. Here you'll find all the information you need to get started
+      with Kopasin JS.
+    </p>
+
+    <div>
+      <h2>1. Copy the input value</h2>
+      <input type="text" value="INPUT VALUE COPY" id="copy-this-1" readonly>
+      <button type="button" id="copy-button-1">Copy</button>
+
+      <h2>2. Copy from div</h2>
+      <div id="copy-this-2">DIV COPY</div>
+      <button type="button" id="copy-button-2">Copy</button>
+
+      <h2>3. Copy from span</h2>
+      <span id="copy-this-3">SPAN COPY</span>
+      <button type="button" id="copy-button-3">Copy</button>
+
+      <h2>4. Copy from p</h2>
+      <p id="copy-this-4">P COPY</p>
+      <button type="button" id="copy-button-4">Copy</button>
+
+      <h2>5. Copy and Paste together in 1 instance</h2>
+      <input type="text" value="THIS IS COPY" id="copy-this-5" readonly>
+      <button type="button" id="copy-button-5">Copy</button>
+
+      <input type="text" id="paste-here-2" readonly>
+      <button type="button" id="paste-button-2">Paste</button>
+
+      <h2>Click this paste button to check if the value are copied</h2>
+      <input type="text" id="paste-here" readonly>
+      <button type="button" id="paste-button">Paste</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>
+      &copy; 2024 Kopasin JS. All rights reserved. By <a href="https://galih.me" style="color: #FFF;">Galih Sukristyan
+        Saputra</a>
+    </p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/kopasin-js@latest/dist/kopasin-js.global.js"></script>
   <script type="text/javascript">
+    // 1. Copy the input value
     new Kopasin({
       copy: {
         on: 'click',
-        trigger: document.getElementById('copy-button'),
-        source: document.getElementById('copy-this'),
+        trigger: document.getElementById('copy-button-1'),
+        source: document.getElementById('copy-this-1'),
         success: function () {
-          console.log('Berhasil Menyalin')
+          let btn = document.getElementById('copy-button-1')
+
+          btn.innerText = 'Copied!'
+          setTimeout(() => {
+            btn.innerText = 'Copy'
+          }, 1000)
         },
         error: function () {
           console.log('Gagal Menyalin')
@@ -30,16 +136,119 @@
       },
     });
 
+    // 2. Copy from <div>
+    new Kopasin({
+      copy: {
+        on: 'click',
+        trigger: document.getElementById('copy-button-2'),
+        source: document.getElementById('copy-this-2'),
+        success: function () {
+          let btn = document.getElementById('copy-button-2')
+
+          btn.innerText = 'Copied!'
+          setTimeout(() => {
+            btn.innerText = 'Copy'
+          }, 1000)
+        },
+        error: function () {
+          console.log('Failed')
+        }
+      },
+    });
+
+    // 3. Copy from <span>
+    new Kopasin({
+      copy: {
+        on: 'click',
+        trigger: document.getElementById('copy-button-3'),
+        source: document.getElementById('copy-this-3'),
+        success: function () {
+          let btn = document.getElementById('copy-button-3')
+
+          btn.innerText = 'Copied!'
+          setTimeout(() => {
+            btn.innerText = 'Copy'
+          }, 1000)
+        },
+        error: function () {
+          console.log('Failed')
+        }
+      },
+    });
+
+    // 4. Copy from <p>
+    new Kopasin({
+      copy: {
+        on: 'click',
+        trigger: document.getElementById('copy-button-4'),
+        source: document.getElementById('copy-this-4'),
+        success: function () {
+          let btn = document.getElementById('copy-button-4')
+
+          btn.innerText = 'Copied!'
+          setTimeout(() => {
+            btn.innerText = 'Copy'
+          }, 1000)
+        },
+        error: function () {
+          console.log('Failed')
+        }
+      },
+    });
+
+    // 5. Use Copy and Paste together
+    // you can use the copy and paste together with different trigger, event and source or target
+    new Kopasin({
+      copy: {
+        on: 'click',
+        trigger: document.getElementById('copy-button-5'),
+        source: document.getElementById('copy-this-5'),
+        success: function () {
+          let btn = document.getElementById('copy-button-5')
+
+          btn.innerText = 'Copied!'
+          setTimeout(() => {
+            btn.innerText = 'Copy'
+          }, 1000)
+        },
+        error: function () {
+          console.log('Failed')
+        }
+      },
+      paste: {
+        on: 'click',
+        trigger: document.getElementById('paste-button-2'),
+        target: document.getElementById('paste-here-2'),
+        success: function () {
+          let btn = document.getElementById('paste-button-2')
+
+          btn.innerText = 'Success!'
+          setTimeout(() => {
+            btn.innerText = 'Paste'
+          }, 1000)
+        },
+        error: function () {
+          alert('Failed')
+        }
+      }
+    });
+
+    // Create a paste instance
     new Kopasin({
       paste: {
         on: 'click',
         trigger: document.getElementById('paste-button'),
         target: document.getElementById('paste-here'),
         success: function () {
-          console.log('Berhasil menempel')
+          let btn = document.getElementById('paste-button')
+
+          btn.innerText = 'Success!'
+          setTimeout(() => {
+            btn.innerText = 'Paste'
+          }, 1000)
         },
         error: function () {
-          console.log('Gagal menempel')
+          alert('Failed')
         }
       }
     })
