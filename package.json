@@ -1,6 +1,6 @@
 {
   "name": "kopasin-js",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "kopasin-js is a simple, lightweight, and customizable JavaScript library for adding copy-paste interactivity to your projects",
   "main": "dist/kopasin-js.global.js",
   "module": "dist/kopasin-js.mjs",
