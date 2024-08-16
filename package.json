@@ -1,0 +1,43 @@
+{
+  "name": "kopasin-js",
+  "version": "1.1.5",
+  "description": "kopasin-js is a simple, lightweight, and customizable JavaScript library for adding copy-paste interactivity to your projects",
+  "main": "dist/kopasin-js.global.js",
+  "module": "dist/kopasin-js.mjs",
+  "unpkg": "dist/kopasin-js.global.js",
+  "jsdelivr": "dist/kopasin-js.global.js",
+  "scripts": {
+    "tsup": "tsup",
+    "dev": "tsup --watch",
+    "build": "tsup --minify",
+    "release": "bumpp ./package.json --no-commit --no-push && npm publish --access public"
+  },
+  "keywords": [
+    "javascript",
+    "JS",
+    "TypeScript",
+    "Javascript Library",
+    "Copy",
+    "Paste",
+    "Copy Paste Library",
+    "From Clipboard",
+    "Allow Pasting"
+  ],
+  "homepage": "https://github.com/masgalih320/kopasin-js#readme",
+  "bugs": {
+    "url": "https://github.com/masgalih320/kopasin-js/issues"
+  },
+  "repository": "https://github.com/masgalih320/kopasin-js",
+  "author": "masgalih320",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "bumpp": "^9.5.1",
+    "prettier": "^3.3.3",
+    "ts-loader": "^9.5.1",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
